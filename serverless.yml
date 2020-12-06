@@ -1,0 +1,16 @@
+service: awsome-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+
+plugins:
+  - serverless-offline
+
+functions:
+ calculation:
+  handler: ./functions/assignment.handler
+  events:
+    - http: POST calculate
